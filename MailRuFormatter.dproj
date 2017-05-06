@@ -91,9 +91,10 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <Icon_MainIcon>icon.ico</Icon_MainIcon>
-        <VerInfo_Keys>CompanyName=HEX0x29A;FileDescription=MailRuFormatter;FileVersion=1.1.0.0;InternalName=MailRuFormatter;LegalCopyright=HEX0x29A;LegalTrademarks=HEX0x29A;OriginalFilename=MailRuFormatter.exe;ProductName=MailRuFormatter;ProductVersion=1.1.0.0;Comments=;LastCompiledTime=2016.12.23 12:21:44;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=HEX0x29A;FileDescription=MailRuFormatter;FileVersion=1.1.0.6;InternalName=MailRuFormatter;LegalCopyright=HEX0x29A;LegalTrademarks=HEX0x29A;OriginalFilename=MailRuFormatter.exe;ProductName=MailRuFormatter;ProductVersion=1.1.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <VerInfo_Build>6</VerInfo_Build>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">

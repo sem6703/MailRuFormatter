@@ -3,7 +3,8 @@
 interface
 
 uses
-  System.SysUtils, System.Classes, Vcl.Controls, Vcl.Forms, Vcl.StdCtrls, System.RegularExpressions;
+  System.SysUtils, System.Classes, Vcl.Controls, Vcl.Forms, Vcl.StdCtrls, System.RegularExpressions,
+  Vcl.ExtCtrls;
 
 type
   TfMain = class(TForm)
@@ -21,6 +22,11 @@ type
     cApplyAntiAntiSpam: TCheckBox;
     cAntiAntiSpam: TComboBox;
     CopyBtn: TButton;
+    PasteBtn: TButton;
+    Splitter4: TSplitter;
+    Splitter1: TSplitter;
+    Splitter2: TSplitter;
+    Splitter3: TSplitter;
     procedure FormatBtnClick(Sender: TObject);
     procedure cEnableForewordClick(Sender: TObject);
     procedure cEnableAfterwordClick(Sender: TObject);
@@ -28,6 +34,8 @@ type
     procedure cApplyAntiAntiSpamClick(Sender: TObject);
     procedure CopyBtnClick(Sender: TObject);
     procedure FormPaint(Sender: TObject);
+    procedure PasteBtnClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     function FormatCode(Text: string; Space: string; AntiFreebie: Boolean;
       AntiAntiSpam: Boolean; AntiAntiSpamUrl: string): string;
@@ -104,10 +112,25 @@ begin
       '<a rel="nofollow" href="$0" target="_blank">$0</a>')
 end;
 
+procedure TfMain.FormCreate(Sender: TObject);
+begin
+  with Constraints do
+  begin
+    MinWidth := Width;
+    MinHeight := Height;
+  end;
+end;
+
 procedure TfMain.FormPaint(Sender: TObject);
 begin
   cAntiAntiSpam.SelStart := Length(cAntiAntiSpam.Text);
   cAntiAntiSpam.SelLength := 0;
+end;
+
+procedure TfMain.PasteBtnClick(Sender: TObject);
+begin
+  cInput.SelectAll;
+  cInput.PasteFromClipboard;
 end;
 
 procedure TfMain.cApplyAntiAntiSpamClick(Sender: TObject);
